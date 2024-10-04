@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>form| html</title>
+        <style>
+          body{
+            width:100%;
+            height:100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            line-height: 10px;
+            fieldset{
+   
+              input{
+                margin-top:10px
+              }
+              span{
+                display: inline-block;
+                width:100px;
+              }
+              input[type="submit"]{
+                display: inline-block;
+                width:283px;
+                
+              }
+            }
+          }
+        </style>
+    </head>
+    <body>
+        <h1>html</h1>
+        <h2>form</h2>
+        <form action="/action_page.php">
+            <fieldset>
+                <legend>회원가입</legend>
+                <label for="id"><span>아이디</span></label>
+                <input type="text" id="id" name="id" autofocus><br>
+                <label for="pw"><span>비밀번호</span></label>
+                <input type="password" id="pw" name="pw"><br>
+                <input type="submit" value="로그인">
+            </fieldset>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>block&inline</title>
+  <style>
+      .blue{background-color: blue;}
+      .bisauq{background-color: bisque;}
+      .tomato{background-color:tomato }
+  </style>
+  
+</head>
+<body>
+    <h1>html</h1>
+    <h2>block & inline</h2>
+
+    <!-- block : 밑으로 배치 -->
+     <div class="blue">blcok</div>
+     <div style="background-color: red;font-weight: bold;">block</div>
+     <div style="background-color: blue;font-weight: bold;">block</div>
+    <!-- inline : 옆으로 배치 -->
+     <span class = "bisauq">inline</span>
+     <span class ="tomato">가</span>
+     <span style="background-color:teal;width:500px;">나</span>
+    
+     <ul class="navi">
+        <li class="menu"><a href="#">menu1</a>
+            <ul class="submenu " style="max-height:0; overflow: hidden;">
+                <li><a href="#">menu1-1</a></li>
+                <li><a href="#">menu1-2</a></li>
+                <li><a href="#">menu1-3</a></li>
+            </ul>
+        </li>
+        <li class="menu"><a href="#">menu2</a>
+            <ul class="submenu " style="max-height:0; overflow: hidden;">
+                <li><a href="#">menu2-1</a></li>
+                <li><a href="#">menu2-2</a></li>
+                <li><a href="#">menu2-3</a></li>
+            </ul>
+        </li>
+        <li class="menu"><a href="#">menu3</a>
+            <ul class="submenu " style="max-height:0; overflow: hidden;">
+                <li><a href="#">menu3-1</a></li>
+                <li><a href="#">menu3-2</a></li>
+                <li><a href="#">menu3-3</a></li>
+            </ul>
+        </li>
+        <li class="menu"><a href="#">menu4</a>
+            <ul class="submenu " style="max-height:0; opacity: 0;overflow: hidden;">
+                <li><a href="#">menu4-1</a></li>
+                <li><a href="#">menu4-2</a></li>
+                <li><a href="#">menu4-3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        const liTags = document.querySelectorAll(".navi > .menu");
+       
+        console.log(liTags);
+        liTags.forEach((li)=>{
+            
+            li.addEventListener("mouseover",()=>{
+                console.log("mouseover");
+                
+                li.querySelector(".submenu").style.maxHeight = "120px";
+                li.querySelector(".submenu").style.opacity="1";
+            })
+            li.addEventListener("mouseout",()=>{
+                li.querySelector(".submenu").style.maxHeight = "0px";
+                li.querySelector(".submenu").style.opacity="0";
+            })
+        });/*서브메뉴 하나씩 보이게 하기*/
+    </script>
+</body>
+</html>
